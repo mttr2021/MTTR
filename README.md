@@ -1,15 +1,15 @@
-End-to-End Referring Video Object Segmentation with Multimodal Transformers
-========
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Framework](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?&logo=PyTorch&logoColor=white)](https://pytorch.org/)
 
 This repo contains the official implementation of the paper: 
 
-<center><b>
-<br>End-to-End Referring Video Object Segmentation with Multimodal Transformers</b>
-
-<br/>
-</center>
+<div align="center">
+<h1>
+<b>
+End-to-End Referring Video Object Segmentation<br> with Multimodal Transformers
+</b>
+</h1>
+</div>
 
 https://user-images.githubusercontent.com/29209964/143956960-73e84321-757f-4272-afc5-385900905093.mp4
 
@@ -39,7 +39,7 @@ MTTR/
                 └── *.h5 (annotations files) 
 ```
 
-###JHMDB-Sentences
+### JHMDB-Sentences
 Follow the instructions [here](https://kgavrilyuk.github.io/publication/actor_action/) to download the dataset.
 Then, extract and organize the files inside your cloned repo directory as follows (note that only the necessary files are
 shown):
