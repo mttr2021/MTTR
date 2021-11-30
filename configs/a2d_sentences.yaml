@@ -1,0 +1,133 @@
+# * Train
+lr:
+  desc: main model learning rate
+  value: 1e-4
+lr_backbone:
+  desc: backbone learning rate
+  value: 1e-5
+text_encoder_lr:
+  desc: text encoder learning rate
+  value: 5e-5
+weight_decay:
+  value: 1e-4
+epochs:
+  value: 70
+clip_max_norm:
+  desc: gradient clipping max norm
+  value: 0.1
+enable_amp:
+  desc: whether to enable automatic mixed precision during training
+  value: true
+seed:
+  value: 42
+
+# * Backbone
+backbone_name:
+  desc: name of backbone
+  value: swin-t
+backbone_pretrained:
+  desc: whether to load pretrained weights
+  value: true
+backbone_pretrained_path:
+  value: 'pretrained_swin_transformer/swin_tiny_patch244_window877_kinetics400_1k.pth'
+train_backbone:
+  value: true
+
+# * Transformer
+num_encoder_layers:
+  desc: Number of encoding layers in the transformer
+  value: 3
+num_decoder_layers:
+  desc: Number of decoding layers in the transformer
+  value: 3
+dim_feedforward:
+  desc: Intermediate size of the feedforward layers in the transformer blocks
+  value: 2048
+d_model:
+  desc: Size of the embeddings (dimension of the transformer)
+  value: 256
+dropout:
+  desc: Dropout applied in the transformer
+  value: 0.1
+nheads:
+  desc: Number of attention heads inside the transformer's attentions
+  value: 8
+num_queries:
+  desc: Number of query slots
+  value: 50
+
+# * Mask Head
+mask_kernels_dim:
+  desc: number of dims in the mask prediction kernels. in CondInst paper the used size is 8.
+  value: 8
+
+# * Text Encoder (in Transformer)
+freeze_text_encoder:
+  desc: Whether to freeze the weights of the text encoder during training
+  value: true
+text_encoder_type:
+  desc: text encoder to use. options - roberta-base, roberta-large, distilroberta-base
+  value: roberta-base
+
+# * Loss
+aux_loss:
+  desc: enable auxiliary decoding losses (loss at each layer)
+  value: true
+
+# * Matcher
+set_cost_is_referred:
+  desc: soft tokens coefficient in the matching cost
+  value: 2
+set_cost_dice:
+  desc: dice coefficient in the matching cost
+  value: 5
+
+# * Loss coefficients
+is_referred_loss_coef:
+  value: 2
+sigmoid_focal_loss_coef:
+  value: 2
+dice_loss_coef:
+  value: 5
+eos_coef:
+  desc: Relative classification weight of the no-object class
+  value: 0.1
+
+# * Dataset Parameters
+dataset_name:
+  value: a2d_sentences
+resize_and_crop_augmentations:
+  value: true
+horizontal_flip_augmentations:
+  value: true
+train_short_size:
+  desc: size of shorter edge of input frames
+  value: 320
+train_max_size:
+  desc: max size of longer edge of input frames
+  value: 576
+eval_short_size:
+  desc: size of shorter edge of input frames
+  value: 320
+eval_max_size:
+  desc: max size of longer edge of input frames
+  value: 576
+output_dir:
+  desc: path where to save, keep empty for an auto-generated date-time labeled folder
+  value: ''
+num_workers:
+  desc: number of workers to load data
+  value: 8
+
+# * Evaluation
+dataset_coco_gt_format_path:
+  desc: path to the dataset's ground truth data in COCO format (a JSON file). used for metrics calculation (mAP etc.)
+        using Pycocotools.
+  value: './datasets/a2d_sentences/a2d_sentences_test_annotations_in_coco_format.json'
+calculate_precision_and_iou_metrics:
+  value: true
+
+# * Wandb
+wandb_mode:
+  desc: wandb logging mode. on - 'online', off - 'disabled'
+  value: 'disabled'
