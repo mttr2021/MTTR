@@ -116,7 +116,7 @@ class A2DSentencesDataset(Dataset):
 
         # read the instance mask:
         frame_annot_path = path.join(self.mask_annotations_dir, video_id, f'{frame_idx:05d}.h5')
-        f = h5py.File(frame_annot_path)
+        f = h5py.File(frame_annot_path, 'r')
         instances = list(f['instance'])
         instance_idx = instances.index(instance_id)  # existence was already validated during init
 
