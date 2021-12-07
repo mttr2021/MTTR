@@ -1,5 +1,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Framework](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?&logo=PyTorch&logoColor=white)](https://pytorch.org/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/12p0jpSx3pJNfZk-y_L44yeHZlhsKVra-?usp=sharing)
+[![Open in Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/MTTR/MTTR-Referring-Video-Object-Segmentation)
 
 This repo contains the official implementation of the paper: 
 
@@ -13,10 +15,50 @@ End-to-End Referring Video Object Segmentation<br> with Multimodal Transformers
 
 https://user-images.githubusercontent.com/29209964/143956960-73e84321-757f-4272-afc5-385900905093.mp4
 
+
+## Updates
+**8/12/2021**
+
+We listened to your requests and now release interactive demonstrations of MTTR on [Google Colab](https://colab.research.google.com/drive/12p0jpSx3pJNfZk-y_L44yeHZlhsKVra-?usp=sharing) and [Hugging Face Spaces](https://huggingface.co/spaces/MTTR/MTTR-Referring-Video-Object-Segmentation)! 🚀 🤗
+
+We currently recommend using the Colab version of the demonstration as it is a lot faster (GPU accelerated) and has more options. The Spaces demo on the other hand has a nicer interface but is currently much slower since it runs on CPU.
+
+Enjoy! :)
+
+
 # How to Run the Code
 First, clone this repo to your local machine using: 
 
 `git clone https://github.com/mttr2021/MTTR.git`
+
+
+## Environment Installation
+The code was tested on a Conda environment installed on Ubuntu 18.04.
+Install [Conda](https://docs.conda.io/en/latest/miniconda.html) and then create an environment as follows:
+
+`conda create -n mttr python=3.9.7 pip -y`
+
+`conda activate mttr`
+
+- Pytorch 1.10:
+
+`conda install pytorch==1.10.0 torchvision==0.11.1 -c pytorch -c conda-forge`
+
+Note that you might have to change the cudatoolkit version above according to your system's CUDA version.
+- Hugging Face transformers 4.11.3:
+
+`pip install transformers==4.11.3`
+
+- COCO API (for mAP calculations):
+
+`pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'`
+
+- Additional required packages:
+
+`pip install h5py wandb opencv-python protobuf av einops ruamel.yaml timm joblib`
+
+`conda install -c conda-forge pandas matplotlib cython scipy cupy`
+
 
 ## Dataset Requirements
 ### A2D-Sentences
@@ -83,33 +125,6 @@ MTTR/
         └── valid/
             └── meta_expressions.json  (text annotations)
 ```
-
-## Environment Installation
-The code was tested on a Conda environment installed on Ubuntu 18.04.
-Install [Conda](https://docs.conda.io/en/latest/miniconda.html) and then create an environment as follows:
-
-`conda create -n mttr python=3.9.7 pip -y`
-
-`conda activate mttr`
-
-- Pytorch 1.10:
-
-`conda install pytorch==1.10.0 torchvision==0.11.1 -c pytorch -c conda-forge`
-
-Note that you might have to change the cudatoolkit version above according to your system's CUDA version.
-- Hugging Face transformers 4.11.3:
-
-`pip install transformers==4.11.3`
-
-- COCO API (for mAP calculations):
-
-`pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'`
-
-- Additional required packages:
-
-`pip install h5py wandb opencv-python protobuf av einops ruamel.yaml timm joblib`
-
-`conda install -c conda-forge pandas matplotlib cython scipy cupy`
 
 
 ## Running Configuration
