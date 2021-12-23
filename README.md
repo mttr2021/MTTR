@@ -70,7 +70,7 @@ Note that you might have to change the cudatoolkit version above according to yo
 
 ## Dataset Requirements
 
-One [script]() to prepare all the datasets for training and evaluation!
+Simply a [script](https://github.com/JerryX1110/MTTR/blob/main/dataset_preparation.sh) to ease all of your troubles when preparing the datasets for both training and evaluation!
 
 ```shell
 sh dataset_preparation.sh
