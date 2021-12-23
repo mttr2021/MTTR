@@ -251,5 +251,8 @@ As explained in our paper JHMDB-Sentences is used exclusively for evaluation, so
 for this dataset.
 
 
-## Useful Repo Related to RVOS
+## Useful Repos Related to RVOS or Visual Grounding
 
+[Awesome-referring-video-object-segmentation](https://github.com/JerryX1110/awesome-rvos)
+
+[Awesome-visual grounding](https://github.com/TheShadow29/awesome-grounding)
