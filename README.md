@@ -17,6 +17,9 @@ https://user-images.githubusercontent.com/29209964/143956960-73e84321-757f-4272-
 
 
 ## Updates
+**23/12/2021**
+We add a [script]() for automatic dataset preparation.
+
 **8/12/2021**
 
 We listened to your requests and now release interactive demonstrations of MTTR on [Google Colab](https://colab.research.google.com/drive/12p0jpSx3pJNfZk-y_L44yeHZlhsKVra-?usp=sharing) and [Hugging Face Spaces](https://huggingface.co/spaces/MTTR/MTTR-Referring-Video-Object-Segmentation)! 🚀 🤗
@@ -61,6 +64,13 @@ Note that you might have to change the cudatoolkit version above according to yo
 
 
 ## Dataset Requirements
+
+One [script]() to prepare all the datasets requierd!
+
+```shell
+sh dataset_preparation
+```
+
 ### A2D-Sentences
 Follow the instructions [here](https://kgavrilyuk.github.io/publication/actor_action/) to download the dataset.
 Then, extract and organize the files inside your cloned repo directory as follows (note that only the necessary files are
