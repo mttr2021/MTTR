@@ -18,10 +18,12 @@ https://user-images.githubusercontent.com/29209964/143956960-73e84321-757f-4272-
 
 ## Updates
 **23/12/2021**
-We add a [script]() for automatic dataset preparation.🚀
+
+We add a [script](https://github.com/JerryX1110/MTTR/blob/main/dataset_preparation.sh) for automatic dataset preparation.🚀
 
 **15/12/2021**
-We add some repos related to RVOS for reference at the bottom of this page!🤗
+
+We add some repos related to RVOS or visual grounding for reference at the bottom of this page!🤗
 
 **8/12/2021**
 
