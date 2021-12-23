@@ -1,4 +1,3 @@
-
 # prepare Refer-YouTube-VOS
 wget https://github.com/JerryX1110/awesome-rvos/blob/main/down_YTVOS_w_refer.py
 python down_YTVOS_w_refer.py
