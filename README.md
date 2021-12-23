@@ -18,7 +18,10 @@ https://user-images.githubusercontent.com/29209964/143956960-73e84321-757f-4272-
 
 ## Updates
 **23/12/2021**
-We add a [script]() for automatic dataset preparation.
+We add a [script]() for automatic dataset preparation.🚀
+
+**15/12/2021**
+We add some repos related to RVOS for reference at the bottom of this page!🤗
 
 **8/12/2021**
 
@@ -65,10 +68,10 @@ Note that you might have to change the cudatoolkit version above according to yo
 
 ## Dataset Requirements
 
-One [script]() to prepare all the datasets requierd!
+One [script]() to prepare all the datasets for training and evaluation!
 
 ```shell
-sh dataset_preparation
+sh dataset_preparation.sh
 ```
 
 ### A2D-Sentences
@@ -244,3 +247,7 @@ which is almost as good (J&F of 54.56 in our experiments).
 
 As explained in our paper JHMDB-Sentences is used exclusively for evaluation, so training is not supported at this time 
 for this dataset.
+
+
+## Useful Repo Related to RVOS
+
