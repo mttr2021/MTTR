@@ -8,9 +8,17 @@ from torchvision.datasets.utils import download_file_from_google_drive
 from models import build_model
 import argparse
 import os
+import wget
+import base64
 import ruamel.yaml
 
 dependencies = ['einops', 'pycocotools', 'ruamel.yaml', 'timm', 'torch', 'transformers.models']
+
+def create_onedrive_directdownload (onedrive_link):
+    data_bytes64 = base64.b64encode(bytes(onedrive_link, 'utf-8'))
+    data_bytes64_String = data_bytes64.decode('utf-8').replace('/','_').replace('+','-').rstrip("=")
+    resultUrl = f"https://api.onedrive.com/v1.0/shares/u!{data_bytes64_String}/root/content"
+    return resultUrl
 
 
 def get_refer_youtube_vos_config(config_dir=None):
@@ -37,11 +45,12 @@ def mttr_refer_youtube_vos(get_weights=True, config=None, config_dir=None, args=
     config = argparse.Namespace(**config)
     model, _, postprocessor = build_model(config)
     if get_weights:
-        checkpoint_id = '1R_F0ETKipENiJUnVwarHnkPmUIcKXRaL'
         hub_dir = get_dir()
         model_dir = os.path.join(hub_dir, 'checkpoints')
-        download_file_from_google_drive(checkpoint_id, model_dir, 'refer-youtube-vos_window-12.pth.tar')
         checkpoint_path = os.path.join(model_dir, 'refer-youtube-vos_window-12.pth.tar')
+        ckpt_url = 'https://1drv.ms/u/s!AlRIP8CVycWEaZj40fXjNP6d0DU'
+        ckpt_direct_url = create_onedrive_directdownload(ckpt_url)
+        wget.download(ckpt_direct_url, checkpoint_path)
         model_state_dict = torch.load(checkpoint_path, map_location='cpu')
         if 'model_state_dict' in model_state_dict.keys():
             model_state_dict = model_state_dict['model_state_dict']
