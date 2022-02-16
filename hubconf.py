@@ -47,10 +47,12 @@ def mttr_refer_youtube_vos(get_weights=True, config=None, config_dir=None, args=
     if get_weights:
         hub_dir = get_dir()
         model_dir = os.path.join(hub_dir, 'checkpoints')
+        os.makedirs(model_dir, exist_ok=True)
         checkpoint_path = os.path.join(model_dir, 'refer-youtube-vos_window-12.pth.tar')
-        ckpt_url = 'https://1drv.ms/u/s!AlRIP8CVycWEaZj40fXjNP6d0DU'
-        ckpt_direct_url = create_onedrive_directdownload(ckpt_url)
-        wget.download(ckpt_direct_url, checkpoint_path)
+        if not os.path.exists(checkpoint_path):
+            ckpt_url = 'https://1drv.ms/u/s!AlRIP8CVycWEaZj40fXjNP6d0DU'
+            ckpt_direct_url = create_onedrive_directdownload(ckpt_url)
+            wget.download(ckpt_direct_url, checkpoint_path)
         model_state_dict = torch.load(checkpoint_path, map_location='cpu')
         if 'model_state_dict' in model_state_dict.keys():
             model_state_dict = model_state_dict['model_state_dict']
