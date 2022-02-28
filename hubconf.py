@@ -4,21 +4,13 @@ Check out https://pytorch.org/docs/stable/hub.html for more info.
 """
 import torch
 from torch.hub import get_dir, download_url_to_file
-from torchvision.datasets.utils import download_file_from_google_drive
 from models import build_model
 import argparse
 import os
-import wget
-import base64
 import ruamel.yaml
+import gdown
 
 dependencies = ['einops', 'pycocotools', 'ruamel.yaml', 'timm', 'torch', 'transformers.models']
-
-def create_onedrive_directdownload (onedrive_link):
-    data_bytes64 = base64.b64encode(bytes(onedrive_link, 'utf-8'))
-    data_bytes64_String = data_bytes64.decode('utf-8').replace('/','_').replace('+','-').rstrip("=")
-    resultUrl = f"https://api.onedrive.com/v1.0/shares/u!{data_bytes64_String}/root/content"
-    return resultUrl
 
 
 def get_refer_youtube_vos_config(config_dir=None):
@@ -50,9 +42,8 @@ def mttr_refer_youtube_vos(get_weights=True, config=None, config_dir=None, args=
         os.makedirs(model_dir, exist_ok=True)
         checkpoint_path = os.path.join(model_dir, 'refer-youtube-vos_window-12.pth.tar')
         if not os.path.exists(checkpoint_path):
-            ckpt_url = 'https://1drv.ms/u/s!AlRIP8CVycWEaZj40fXjNP6d0DU'
-            ckpt_direct_url = create_onedrive_directdownload(ckpt_url)
-            wget.download(ckpt_direct_url, checkpoint_path)
+            ckpt_gdrive_file_id = '1R_F0ETKipENiJUnVwarHnkPmUIcKXRaL'
+            gdown.download(id=ckpt_gdrive_file_id, output=checkpoint_path)
         model_state_dict = torch.load(checkpoint_path, map_location='cpu')
         if 'model_state_dict' in model_state_dict.keys():
             model_state_dict = model_state_dict['model_state_dict']
