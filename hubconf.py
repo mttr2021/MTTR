@@ -42,8 +42,8 @@ def mttr_refer_youtube_vos(get_weights=True, config=None, config_dir=None, args=
         os.makedirs(model_dir, exist_ok=True)
         checkpoint_path = os.path.join(model_dir, 'refer-youtube-vos_window-12.pth.tar')
         if not os.path.exists(checkpoint_path):
-            ckpt_gdrive_file_id = '1R_F0ETKipENiJUnVwarHnkPmUIcKXRaL'
-            gdown.download(id=ckpt_gdrive_file_id, output=checkpoint_path)
+            ckpt_download_link = 'https://drive.google.com/uc?export=download&confirm=pbef&id=1R_F0ETKipENiJUnVwarHnkPmUIcKXRaL'
+            gdown.download(url=ckpt_download_link, output=checkpoint_path)
         model_state_dict = torch.load(checkpoint_path, map_location='cpu')
         if 'model_state_dict' in model_state_dict.keys():
             model_state_dict = model_state_dict['model_state_dict']
