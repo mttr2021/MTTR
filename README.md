@@ -3,7 +3,7 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/12p0jpSx3pJNfZk-y_L44yeHZlhsKVra-?usp=sharing)
 [![Open in Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/MTTR/MTTR-Referring-Video-Object-Segmentation)
 
-This repo contains the official implementation of the **CVPR 2022** paper: 
+This repo contains the official implementation of the **CVPR 2022** [paper](https://arxiv.org/abs/2111.14821): 
 
 <div align="center">
 <h1>
@@ -13,7 +13,7 @@ End-to-End Referring Video Object Segmentation<br> with Multimodal Transformers
 </h1>
 <h4>
 <b>
-Adam Botach, Evgenii Zheltonozhskii, Chaim Baskin
+Adam Botach, Evgenii Zheltonozhskii, Dr. Chaim Baskin
     
 Technion – Israel Institute of Technology
 </b>
@@ -28,6 +28,8 @@ https://user-images.githubusercontent.com/29209964/143956960-73e84321-757f-4272-
 **3/3/2022**
 
 We are excited to announce that our paper was accepted for publication at **CVPR 2022**! 🥳🥳🥳
+
+The paper can be accessed [here](https://arxiv.org/abs/2111.14821).
 
 **8/12/2021**
 
