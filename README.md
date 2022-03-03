@@ -3,7 +3,7 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/12p0jpSx3pJNfZk-y_L44yeHZlhsKVra-?usp=sharing)
 [![Open in Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/MTTR/MTTR-Referring-Video-Object-Segmentation)
 
-This repo contains the official implementation of the paper: 
+This repo contains the official implementation of the **CVPR 2022** paper: 
 
 <div align="center">
 <h1>
@@ -11,12 +11,24 @@ This repo contains the official implementation of the paper:
 End-to-End Referring Video Object Segmentation<br> with Multimodal Transformers
 </b>
 </h1>
+<h4>
+<b>
+Adam Botach, Evgenii Zheltonozhskii, Chaim Baskin
+    
+Technion – Israel Institute of Technology
+</b>
+</h4>
 </div>
+
 
 https://user-images.githubusercontent.com/29209964/143956960-73e84321-757f-4272-afc5-385900905093.mp4
 
 
 ## Updates
+**3/3/2022**
+
+We are excited to announce that our paper was accepted for publication at **CVPR 2022**! 🥳🥳🥳
+
 **8/12/2021**
 
 We listened to your requests and now release interactive demonstrations of MTTR on [Google Colab](https://colab.research.google.com/drive/12p0jpSx3pJNfZk-y_L44yeHZlhsKVra-?usp=sharing) and [Hugging Face Spaces](https://huggingface.co/spaces/MTTR/MTTR-Referring-Video-Object-Segmentation)! 🚀 🤗
@@ -234,3 +246,16 @@ which is almost as good (J&F of 54.56 in our experiments).
 
 As explained in our paper JHMDB-Sentences is used exclusively for evaluation, so training is not supported at this time 
 for this dataset.
+
+### Citation
+
+Please consider citing our work in your publications if it helped you or if it is relevant to your research:
+
+```
+@inproceedings{botach2021end,
+  title={End-to-End Referring Video Object Segmentation with Multimodal Transformers},
+  author={Botach, Adam and Zheltonozhskii, Evgenii and Baskin, Chaim},
+  booktitle={Proc. IEEE Conf. Computer Vision and Pattern Recognition (CVPR)},
+  year={2022}
+}
+```
