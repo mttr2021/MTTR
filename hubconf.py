@@ -5,12 +5,20 @@ Check out https://pytorch.org/docs/stable/hub.html for more info.
 import torch
 from torch.hub import get_dir, download_url_to_file
 from models import build_model
+from models.swin_transformer import compute_mask
 import argparse
 import os
+import gc
 import ruamel.yaml
 import gdown
 
 dependencies = ['einops', 'pycocotools', 'ruamel.yaml', 'timm', 'torch', 'transformers.models']
+
+
+def clear_memory():
+    compute_mask.cache_clear()  # empty cache of SwinT
+    gc.collect()
+    torch.cuda.empty_cache()
 
 
 def get_refer_youtube_vos_config(config_dir=None):
@@ -27,6 +35,7 @@ def get_refer_youtube_vos_config(config_dir=None):
 
 
 def mttr_refer_youtube_vos(get_weights=True, config=None, config_dir=None, args=None, running_mode='eval'):
+    clear_memory()
     if config is None:
         config = get_refer_youtube_vos_config(config_dir)
     config = {k: v['value'] for k, v in config.items()}
