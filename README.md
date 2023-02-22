@@ -25,6 +25,10 @@ https://user-images.githubusercontent.com/29209964/143956960-73e84321-757f-4272-
 
 
 ## Updates
+**2/22/2023**
+
+Non-official 3rd party apps:  interactive demonstrations of MTTR on [ModelScope](https://modelscope.cn/models/damo/cv_swin-t_referring_video-object-segmentation/summary) = the largest Model Community in Chinese by  [@pida0](https://github.com/pida0).
+
 **3/3/2022**
 
 We are excited to announce that our paper was accepted for publication at **CVPR 2022**! 🥳🥳🥳
